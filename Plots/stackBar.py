@@ -16,7 +16,12 @@ new_df = df.groupby(['Country']).agg(
 # Sorting values and select 20 first value
 new_df = new_df.sort_values(by=['Confirmed'],
 ascending=[False]).head(20).reset_index()
-# Preparing data
+
+
+# Preparing data - Creates each section of the stacked bar chart by defining the dataframe used, the name,
+# and the color the section will be.
+# They are added to the data used when creating the stacked bar chart
+
 trace1 = go.Bar(x=new_df['Country'], y=new_df['Unrecovered'], name='Unrecovered',
 marker={'color': '#CD7F32'})
 trace2 = go.Bar(x=new_df['Country'], y=new_df['Recovered'], name='Recovered',

@@ -5,6 +5,8 @@ import plotly.graph_objs as go
 df = pd.read_csv('../Datasets/CoronaTimeSeries.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 # Preparing data
+# Sets the x and y axis data of the graph as Date and Confirmed cases respectively.
+# Sets the graph type to a line graph and
 data = [go.Scatter(x=df['Date'], y=df['Confirmed'], mode='lines', name='Death')]
 # Preparing layout
 layout = go.Layout(title='Corona Virus Confirmed Cases From 2020-01-22 to 2020-03-17', xaxis_title="Date",

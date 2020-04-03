@@ -4,6 +4,10 @@ import pandas as pd
 # Load CSV file from Datasets folder
 df = pd.read_csv('../Datasets/CoronaTimeSeries.csv')
 # Preparing data
+# Defines the x and y axis data as which day and week of the month respectively
+# The z axis is number of recovered cases and sets the color scale
+
+
 data = [go.Heatmap(x=df['Day'],
 y=df['WeekofMonth'],
 z=df['Recovered'].values.tolist(),

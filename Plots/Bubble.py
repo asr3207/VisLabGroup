@@ -12,6 +12,9 @@ df = df[(df['Country'] != 'China') & (df['Country'] != 'Others')]
 new_df = df.groupby(['Country']).agg(
 {'Confirmed': 'sum', 'Recovered': 'sum', 'Unrecovered': 'sum'}).reset_index()
 # Preparing data
+# Defines the x-y axis by the recovered and unrecovered cases
+# and adds the new_df info as text assigned to each marker
+# Markers are size based on number of confirmed cases and defines the color scale
 data = [
 go.Scatter(x=new_df['Recovered'],
 y=new_df['Unrecovered'],

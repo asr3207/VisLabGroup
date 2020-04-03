@@ -4,6 +4,9 @@ import plotly.graph_objs as go
 df = pd.read_csv('../Datasets/CoronaTimeSeries.csv')
 df['Date'] = pd.to_datetime(df['Date'])
 # Preparing data
+# Creates each separate line based on Deaths, Recovered, and Unrecovered cases and sets them as lines
+# x-axis is define by dates and each line is added to an array of data to be used in creating a multiline chart
+
 trace1 = go.Scatter(x=df['Date'], y=df['Death'], mode='lines', name='Death')
 trace2 = go.Scatter(x=df['Date'], y=df['Recovered'], mode='lines',
 name='Recovered')

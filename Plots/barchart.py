@@ -18,6 +18,8 @@ new_df = filtered_df.groupby(['State'])['Confirmed'].sum().reset_index()
 new_df = new_df.sort_values(by=['Confirmed'], ascending=[False]).head(20)
 
 # Preparing data
+# Uses the sorted data to separate each bar by state along the x-axis and
+# uses the Confirmed dataframe for number of cases which determines the bar's size on the y-axis
 data = [go.Bar(x=new_df['State'], y=new_df['Confirmed'])]
 
 # Preparing layout
